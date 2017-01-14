@@ -16,35 +16,35 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 4256459577340864}
-  - component: {fileID: 108440115225755144}
+  - 4: {fileID: 4256459577340864}
+  - 108: {fileID: 108440115225755144}
   m_Layer: 0
-  m_Name: Point light
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1795105847088704
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 4941957608639408}
-  - component: {fileID: 54309327486607856}
-  - component: {fileID: 65434540808641270}
-  - component: {fileID: 114003363220034588}
+  - 4: {fileID: 4941957608639408}
+  - 54: {fileID: 54309327486607856}
+  - 65: {fileID: 65434540808641270}
+  - 114: {fileID: 114003363220034588}
   m_Layer: 0
   m_Name: TrigglerLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4256459577340864
 Transform:
   m_ObjectHideFlags: 1
@@ -54,10 +54,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4941957608639408}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4941957608639408
 Transform:
   m_ObjectHideFlags: 1
@@ -67,11 +67,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 2.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4256459577340864}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &54309327486607856
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99069fb1357d4daf868aa3d2c9811d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConnectLight: {fileID: 108440115225755144}
+  ConnectLight: {fileID: 0}

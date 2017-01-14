@@ -8,13 +8,13 @@ public class Tile : MonoBehaviour
 	public bool lumin = false; //lit tile by a lamp must change manually in each lamp
 	public bool available = false; // set by player movement.
 
-	void Awake()
-	{
-
-	}
-
-	void Start() 
-	{
-		
-	}
+//	void Awake()
+//	{
+//
+//	}
+//
+//	void Start() 
+//	{
+//		
+//	}
 }

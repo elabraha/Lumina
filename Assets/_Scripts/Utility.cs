@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-struct Coord
+public struct Coord
 {
 	public int x;
 	public int y;
