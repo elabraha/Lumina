@@ -91,6 +91,28 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &367522890 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1966255171930434, guid: 212a99cacb4e642cab859d1d22a73986,
+    type: 2}
+  m_PrefabInternal: {fileID: 1559433773}
+--- !u!114 &367522891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 367522890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f87e2c946a7e499bbca4bcc95a4d4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TilePrefab: {fileID: 1000012129505972, guid: 70201b29c4d764fd389f3bf293d13d9f, type: 2}
+  brickprefab: {fileID: 0}
+  waterTile: {fileID: 0}
+  MapWidth: 10
+  MapHeight: 10
+  mapFile: {fileID: 4900000, guid: 097208fb5362b44dcb27964bb762203a, type: 3}
 --- !u!1001 &1559433773
 Prefab:
   m_ObjectHideFlags: 0
@@ -130,7 +152,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114583430470397994, guid: 212a99cacb4e642cab859d1d22a73986,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114583430470397994, guid: 212a99cacb4e642cab859d1d22a73986, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 212a99cacb4e642cab859d1d22a73986, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1581701578

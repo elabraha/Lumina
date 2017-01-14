@@ -1,29 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class MapGenerator : MonoBehaviour {
-
+	
 	public GameObject TilePrefab;
+	public GameObject brickprefab;
+	public GameObject waterTile;
 	public int MapWidth, MapHeight;
+	public TextAsset mapFile;
 
 	public GameObject[,] tiles;
 
 	void Start()
 	{
+		//mapFile = Resources.Load("mapfile1.txt") as TextAsset;
 		tiles = new GameObject[MapWidth, MapHeight];
 		GenerateMap();
 	}
 
 	public void GenerateMap() {
-		for (int x = 0; x < MapWidth; ++x)
+		string[] filelines;
+		filelines = mapFile.text.Split('\n');
+		for (int y = 0; y < MapHeight; ++y)
 		{
-			for (int y = 0; y < MapHeight; ++y)
+			char[] line = filelines [y].ToCharArray ();
+			for (int x = 0; x < MapWidth; ++x)
 			{
-				Vector3 tilePosition = new Vector3(-MapWidth/2 + 0.5f + x, 0, -MapHeight / 2 + 0.5f + y);
-				GameObject tile = Instantiate(TilePrefab, tilePosition, Quaternion.Euler(Vector3.right * 90)) as GameObject;
-				tiles[x, y] = tile;
-				tile.GetComponent<Tile>().coordinate.x = x;
-				tile.GetComponent<Tile>().coordinate.y = y;
+				if (line [x] == 'G') { 
+					Vector3 tilePosition = new Vector3 (-MapWidth / 2 + 0.5f + x, 0, -MapHeight / 2 + 0.5f + y);
+					GameObject tile = Instantiate (TilePrefab, tilePosition, Quaternion.Euler (Vector3.right * 90)) as GameObject;
+					tiles [x, y] = tile;
+					tile.GetComponent<Tile> ().coordinate.x = x;
+					tile.GetComponent<Tile> ().coordinate.y = y;
+				} else if (line [x] == 'B') {
+					GameObject tile = new GameObject ();
+//					tiles [x, y] = tile;
+//					tile.GetComponent<Tile> ().coordinate.x = x;
+//					tile.GetComponent<Tile> ().coordinate.y = y;
+//					tile.GetComponent<Tile> ().walkable = false;
+					
+				} else {
+					Debug.Log ("Wrong Char input! " + line[x]);
+				} 
 			}
 			
 		}
