@@ -19,7 +19,23 @@ public class Team : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (this.InMyTurn == true) {
+			foreach (Transform child in this.gameObject.transform) {
+				if (child.tag == "Halo") {
+					child.gameObject.SetActive (true);
+				}
 
+			}
+		}else {
+			foreach (Transform child in this.gameObject.transform)
+			{
+					if (child.tag == "Halo") {
+						child.gameObject.SetActive (false);
+					}
+
+			}
+
+		}
 	}
 
 

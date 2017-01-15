@@ -13,6 +13,9 @@ public class MapGenerator : MonoBehaviour {
 	public TextAsset mapFile;
 	public GameObject[,] tiles;
 
+<<<<<<< HEAD
+
+=======
 	public static MapGenerator Map;
 
 	void Awake() {
@@ -22,6 +25,7 @@ public class MapGenerator : MonoBehaviour {
 			Map = this;
 		}
 	}
+>>>>>>> 78586dc40978f60bc7dd25678a0157a3c1b508eb
 
 	void Start()
 	{

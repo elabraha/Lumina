@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public static GameManager gm;
-
+	public GameObject Camera;
+	public GameObject ani; 
 	//public GameObject player;
+	public GameObject player1turnCanvas;
+	public GameObject player2turnCanvas;
+
 
 	public enum gameStates {Playing, Player1Win, GameOver, Player2Win};
 	public gameStates gameState = gameStates.Playing;
@@ -30,7 +34,7 @@ public class GameManager : MonoBehaviour {
 	//attache the one has highest character number
 	public GameObject player1;
 	public GameObject Player2; 
-
+	private float time = 5.0f;
 	void Start () {
 		if (gm == null)
 			gm = gameObject.GetComponent<GameManager> ();
@@ -61,6 +65,11 @@ public class GameManager : MonoBehaviour {
 					// switch which GUI is showing		
 					mainCanvas.SetActive (false);
 				Player1WinCanvas.SetActive (true);
+				Destroy(Player1WinCanvas, time);
+				Destroy (player1turnCanvas);
+				Destroy (player2turnCanvas);
+				Camera.GetComponent<Animator> ().enabled = true; 
+
 			} else if (Player2.GetComponent<Team>().MemberPower == 3) {
 					// update gameState
 				gameState = gameStates.Player2Win;
@@ -70,18 +79,24 @@ public class GameManager : MonoBehaviour {
 					// switch which GUI is showing			
 					mainCanvas.SetActive (false);
 				Player2WinCanvas.SetActive (true);
+				Destroy(Player2WinCanvas, time);
+				Destroy (player1turnCanvas);
+				Destroy (player2turnCanvas);
+
+				Camera.GetComponent<Animator> ().enabled = true; 
+
 				}
 				break;
 		case gameStates.Player1Win:
-				backgroundMusic.volume -= 0.01f;
+				backgroundMusic.volume -= 0.04f;
 				if (backgroundMusic.volume<=0.0f) {
-					//AudioSource.PlayClipAtPoint (gameOverSFX,gameObject.transform.position);
+					AudioSource.PlayClipAtPoint (gameOverSFX,gameObject.transform.position);
 
 					gameState = gameStates.GameOver;
 				}
 				break;
 		case gameStates.Player2Win:
-				backgroundMusic.volume -= 0.01f;
+				backgroundMusic.volume -= 0.04f;
 				if (backgroundMusic.volume<=0.0f) {
 					AudioSource.PlayClipAtPoint (beatLevelSFX,gameObject.transform.position);
 					
