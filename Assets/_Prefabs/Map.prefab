@@ -51,10 +51,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f87e2c946a7e499bbca4bcc95a4d4d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TilePrefab: {fileID: 1000012129505972, guid: 70201b29c4d764fd389f3bf293d13d9f, type: 2}
-  brickprefab: {fileID: 1670420135633290, guid: e8958fd2902aa456e919a04af291c317,
+  tilePrefab: {fileID: 1000012129505972, guid: 70201b29c4d764fd389f3bf293d13d9f, type: 2}
+  brickPrefab: {fileID: 1670420135633290, guid: e8958fd2902aa456e919a04af291c317,
     type: 2}
-  waterTile: {fileID: 0}
+  waterTilePrefab: {fileID: 1270564297082018, guid: cf9ba48705c194daea6bbf72f00f934e,
+    type: 2}
+  luminPrefab: {fileID: 1780538504298134, guid: 8c3739bed8dc84d1c894417cda48b6f5,
+    type: 2}
   MapWidth: 10
   MapHeight: 10
   mapFile: {fileID: 4900000, guid: 097208fb5362b44dcb27964bb762203a, type: 3}
