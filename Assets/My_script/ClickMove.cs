@@ -12,11 +12,8 @@ public class ClickMove : MonoBehaviour {
 	void OnMouseUp(){
 		Debug.Log("Click!");
 		if(this.walkable){
-<<<<<<< HEAD
-			map.GetComponent<MapGenerator>().MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
-=======
 			map.MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
->>>>>>> 78586dc40978f60bc7dd25678a0157a3c1b508eb
+
 		}
 	}
 

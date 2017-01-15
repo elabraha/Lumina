@@ -50,7 +50,7 @@ public class Team : MonoBehaviour {
 					//destory this object and it's light
 					//change other's side and color and memberPower
 					other.gameObject.transform.localScale += new Vector3 (0.15f, 0.15f, 0.15f);
-					other.gameObject.transform.GetComponentInChildren<Light> ().range += 5;
+					other.gameObject.transform.GetComponentInChildren<Light> ().range += 10;
 						other.gameObject.GetComponent<Team> ().MemberPower += this.MemberPower;
 				
 					Destroy (this.gameObject.transform.GetChild (0).gameObject);
@@ -59,7 +59,7 @@ public class Team : MonoBehaviour {
 						
 				} else {
 					this.gameObject.transform.localScale += new Vector3 (0.15f, 0.15f, 0.15f);
-					this.gameObject.transform.GetComponentInChildren<Light> ().range += 5;
+					this.gameObject.transform.GetComponentInChildren<Light> ().range += 10;
 						this.gameObject.GetComponent<Team> ().MemberPower += other.gameObject.GetComponent<Team> ().MemberPower;
 					Destroy (other.gameObject.transform.GetChild (0).gameObject);
 					Destroy (other.gameObject);
