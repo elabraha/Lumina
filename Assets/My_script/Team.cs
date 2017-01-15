@@ -44,6 +44,7 @@ public class Team : MonoBehaviour {
 		if(other.gameObject.tag == "Player"){
 			if (other.gameObject.GetComponent<Team> ().TeamNumber == this.TeamNumber) {
 				//Do stuff
+				AudioManager.Audio_Instance.Good.Play ();
 				//check which one has smaller
 				if(this.InMyTurn){
 				if (other.gameObject.GetComponent<Team> ().TeamCharacterNumber > this.TeamCharacterNumber) {
@@ -68,6 +69,7 @@ public class Team : MonoBehaviour {
 			}
 				} else {
 				//if tigger with  enemy
+				AudioManager.Audio_Instance.Bad.Play ();
 				if (this.InMyTurn) {
 					if (other.gameObject.GetComponent<Team> ().BePunched == false) {
 						this.gameObject.GetComponent<Move> ().movePower += 3;

@@ -17,6 +17,8 @@ public class Tile : MonoBehaviour
 			print ("right click");
 			print (luminObject.GetComponentInChildren <Light>().enabled + " to " + !luminObject.GetComponentInChildren <Light>().enabled);
 			luminObject.GetComponentInChildren <Light>().enabled = !luminObject.GetComponentInChildren <Light>().enabled;
+			AudioManager.Audio_Instance.Light.Play ();
+			//luminObject.GetComponentInChildren <Behaviour>().enabled = !luminObject.GetComponentInChildren <Behaviour>().enabled;
 		}
 	}
 
@@ -32,6 +34,7 @@ public class Tile : MonoBehaviour
 
 	void OnMouseUp(){
 		Debug.Log("Click!");
+		AudioManager.Audio_Instance.Click.Play ();
 		if(this.walkable){
 			MapGenerator.Map.MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
 		}
