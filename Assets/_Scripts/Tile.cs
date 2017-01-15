@@ -29,11 +29,11 @@ public class Tile : MonoBehaviour
 		}
 	}
 
-	void OnCollisionEnter() {
+	void OnCollisionEnter(Collision coll) {
 		onTile = true;
 		print ("collide"); 
 	}
-	void OnCollisionEnd() {
+	void OnCollisionEnd(Collision coll) {
 		onTile = false;
 		print ("exit"); 
 	}
