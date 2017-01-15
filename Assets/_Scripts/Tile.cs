@@ -12,15 +12,6 @@ public class Tile : MonoBehaviour
 	//public GameObject currplayer;
 	public bool onTile = false;
 
-//	void Awake()
-//	{
-//
-//	}
-//
-//	void Start() 
-//	{
-//		
-//	}
 	void Update() {
 		if (Input.GetMouseButtonUp (1) && this.lumin && onTile) {
 			print ("right click");
@@ -29,11 +20,11 @@ public class Tile : MonoBehaviour
 		}
 	}
 
-	void OnCollisionEnter(Collision coll) {
+	void OnTriggerEnter(Collider coll) {
 		onTile = true;
 		print ("collide"); 
 	}
-	void OnCollisionEnd(Collision coll) {
+	void OnTriggerExit(Collider coll) {
 		onTile = false;
 		print ("exit"); 
 	}
