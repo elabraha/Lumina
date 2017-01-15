@@ -13,6 +13,16 @@ public class MapGenerator : MonoBehaviour {
 	public TextAsset mapFile;
 	public GameObject[,] tiles;
 
+	public static MapGenerator Map;
+
+	void Awake() {
+		if (Map != null) {
+			Debug.Log ("more than one map ERROR!!!");
+		} else {
+			Map = this;
+		}
+	}
+
 	void Start()
 	{
 		//mapFile = Resources.Load("mapfile1.txt") as TextAsset;
@@ -35,7 +45,7 @@ public class MapGenerator : MonoBehaviour {
 					tiles [x, y] = tile;
 					tile.GetComponent<Tile> ().coordinate.x = x;
 					tile.GetComponent<Tile> ().coordinate.y = y;
-					ClickMove cm = tile.GetComponent<ClickMove> ();
+					Tile cm = tile.GetComponent<Tile> ();
 					cm.map = this;
 				} else if (line [x] == 'B') {
 					Vector3 tilePosition = new Vector3 (-MapWidth / 2 + 0.5f + x, 0.5f, -MapHeight / 2 + 0.5f + y);
@@ -62,6 +72,8 @@ public class MapGenerator : MonoBehaviour {
 					tile.GetComponent<Tile> ().coordinate.y = y;
 					tile.GetComponent<Tile> ().lumin = true;
 					tile.GetComponent<Tile> ().luminObject = lumin;
+					Tile cm = tile.GetComponent<Tile> ();
+					cm.map = this;
 				}
 				else {
 					Debug.Log ("Wrong Char input! " + line[x]);

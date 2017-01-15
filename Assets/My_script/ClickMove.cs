@@ -9,18 +9,11 @@ public class ClickMove : MonoBehaviour {
 	public bool lumin = false; //lit tile by a lamp must change manually in each lamp
 	public bool available = false; // set by player movement.
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 	void OnMouseUp(){
 		Debug.Log("Click!");
 		if(this.walkable){
-		map.MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
+			map.MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
 		}
 	}
+
 }

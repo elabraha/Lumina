@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33000011069783434}
   - component: {fileID: 23000014110947466}
   - component: {fileID: 114324664381028884}
-  - component: {fileID: 114705386110321886}
+  - component: {fileID: 64946953604202978}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -81,6 +81,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012129505972}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &64946953604202978
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012129505972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &114324664381028884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,21 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203644dba7ae94ec7b04839c799f9030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkable: 0
-  lumin: 0
-  available: 0
---- !u!114 &114705386110321886
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012129505972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdafd28641bd6482ca4070efd3c07f7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  map: {fileID: 0}
   walkable: 1
   lumin: 0
   available: 0
+  onTile: 0
+  luminObject: {fileID: 0}
+  map: {fileID: 114664631345848826, guid: 212a99cacb4e642cab859d1d22a73986, type: 2}
