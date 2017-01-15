@@ -5,7 +5,7 @@ public class MapGenerator : MonoBehaviour {
 
 	public GameObject TilePrefab;
 	public int MapWidth, MapHeight;
-
+	public GameObject selectedCharacter;
 	public GameObject[,] tiles;
 
 	void Start()
@@ -24,8 +24,20 @@ public class MapGenerator : MonoBehaviour {
 				tiles[x, y] = tile;
 				tile.GetComponent<Tile>().coordinate.x = x;
 				tile.GetComponent<Tile>().coordinate.y = y;
+				ClickMove cm = tile.GetComponent<ClickMove> ();
+				cm.map = this;
 			}
 			
 		}
+	}
+
+
+	public void MoveSelectedCharacterTo(float x, float z){
+		int mp = selectedCharacter.GetComponent<Move> ().movePower;
+		float stepMove = (selectedCharacter.transform.position - new Vector3 (x, selectedCharacter.transform.position.y, z)).magnitude;
+		if(stepMove == 1 && mp > 0){
+		selectedCharacter.transform.position = new Vector3 (x,0, z);
+			selectedCharacter.GetComponent<Move> ().movePower--;
+	}
 	}
 }

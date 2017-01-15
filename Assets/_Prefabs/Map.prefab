@@ -54,3 +54,4 @@ MonoBehaviour:
   TilePrefab: {fileID: 1000012129505972, guid: 70201b29c4d764fd389f3bf293d13d9f, type: 2}
   MapWidth: 30
   MapHeight: 10
+  selectedCharacter: {fileID: 0}
