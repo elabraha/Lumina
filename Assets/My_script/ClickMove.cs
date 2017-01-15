@@ -20,7 +20,7 @@ public class ClickMove : MonoBehaviour {
 	void OnMouseUp(){
 		Debug.Log("Click!");
 		if(this.walkable){
-		map.MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
+			map.GetComponent<MapGenerator>().MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
 		}
 	}
 }

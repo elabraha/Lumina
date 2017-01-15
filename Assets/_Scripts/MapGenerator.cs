@@ -13,6 +13,8 @@ public class MapGenerator : MonoBehaviour {
 	public TextAsset mapFile;
 	public GameObject[,] tiles;
 
+
+
 	void Start()
 	{
 		//mapFile = Resources.Load("mapfile1.txt") as TextAsset;

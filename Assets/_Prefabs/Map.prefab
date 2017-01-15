@@ -58,6 +58,7 @@ MonoBehaviour:
     type: 2}
   luminPrefab: {fileID: 1780538504298134, guid: 8c3739bed8dc84d1c894417cda48b6f5,
     type: 2}
-  MapWidth: 10
-  MapHeight: 10
+  MapWidth: 16
+  MapHeight: 16
+  selectedCharacter: {fileID: 0}
   mapFile: {fileID: 4900000, guid: 097208fb5362b44dcb27964bb762203a, type: 3}
