@@ -24,11 +24,29 @@ public class Tile : MonoBehaviour
 
 	void OnTriggerEnter(Collider coll) {
 		onTile = true;
+		//highlightwalkableTiles ();
 		print ("collide"); 
 	}
 	void OnTriggerExit(Collider coll) {
 		onTile = false;
+		//highlightwalkableTiles ();
 		print ("exit"); 
+	}
+
+	void highlightwalkableTiles() {
+		if (MapGenerator.Map.tiles [coordinate.x - 1, coordinate.y].GetComponent <Tile> ().walkable == true) {
+			print ("??");
+			MapGenerator.Map.tiles [coordinate.x - 1, coordinate.y].GetComponent <Light> ().enabled = !MapGenerator.Map.tiles [coordinate.x - 1, coordinate.y].GetComponent <Light> ().enabled;
+		} else if (MapGenerator.Map.tiles [coordinate.x + 1, coordinate.y].GetComponent <Tile> ().walkable == true) {
+			print ("??");
+			MapGenerator.Map.tiles [coordinate.x + 1, coordinate.y].GetComponent <Light> ().enabled = !MapGenerator.Map.tiles [coordinate.x + 1, coordinate.y].GetComponent <Light> ().enabled;
+		} else if (MapGenerator.Map.tiles [coordinate.x, coordinate.y - 1].GetComponent <Tile> ().walkable == true) {
+			print ("??");
+			MapGenerator.Map.tiles [coordinate.x, coordinate.y - 1].GetComponent <Light> ().enabled = !MapGenerator.Map.tiles [coordinate.x, coordinate.y - 1].GetComponent <Light> ().enabled;
+		} else if (MapGenerator.Map.tiles [coordinate.x, coordinate.y + 1].GetComponent <Tile> ().walkable == true) {
+			print ("??");
+			MapGenerator.Map.tiles [coordinate.x, coordinate.y + 1].GetComponent <Light> ().enabled = !MapGenerator.Map.tiles [coordinate.x, coordinate.y + 1].GetComponent <Light> ().enabled;
+		}
 	}
 
 
