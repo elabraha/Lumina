@@ -23,22 +23,26 @@ public class Tile : MonoBehaviour
 //	}
 	void Update() {
 		if (Input.GetMouseButtonUp (1) && this.lumin && onTile) {
+			print ("right click");
+			print (luminObject.GetComponentInChildren <Light>().enabled + " to " + !luminObject.GetComponentInChildren <Light>().enabled);
 			luminObject.GetComponentInChildren <Light>().enabled = !luminObject.GetComponentInChildren <Light>().enabled;
 		}
 	}
 
 	void OnCollisionEnter() {
 		onTile = true;
+		print ("collide"); 
 	}
 	void OnCollisionEnd() {
 		onTile = false;
+		print ("exit"); 
 	}
 
 
 	void OnMouseUp(){
 		Debug.Log("Click!");
 		if(this.walkable){
-			map.MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
+			MapGenerator.Map.MoveSelectedCharacterTo (this.transform.position.x, this.transform.position.z);
 		}
 	}
 }
